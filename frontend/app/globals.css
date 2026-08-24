@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f7f6f3;
+  color: #111111;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: #111111;
+  color: #f7f6f3;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid #111111;
+  outline-offset: 2px;
+}
+
+.container-wide {
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 768px) {
+  .container-wide {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* Small tracked uppercase label, used throughout for nav, eyebrows, meta */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #767671;
+}
+
+.hairline {
+  border-color: #DBDAD3;
+}
+
+.btn-primary {
+  background-color: #111111;
+  color: #f7f6f3;
+  padding: 15px 30px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.btn-primary:hover {
+  background-color: #2b2b2b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  border: 1px solid #111111;
+  color: #111111;
+  background: transparent;
+  padding: 14px 29px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+.btn-outline:hover {
+  background-color: #111111;
+  color: #f7f6f3;
+  transform: translateY(-1px);
+}
+
+.input-field {
+  width: 100%;
+  border: 1px solid #DBDAD3;
+  background-color: #ffffff;
+  padding: 13px 15px;
+  font-size: 14px;
+  color: #111111;
+  border-radius: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-field::placeholder {
+  color: #a4a39c;
+}
+.input-field:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 1px #111111;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EDECE7;
+}
+::-webkit-scrollbar-thumb {
+  background: #767671;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #111111;
+}
+
+/* Serif section heading, big architectural type */
+.section-heading {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+/* Hero Ken Burns cinematic zoom */
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+.hero-image-zoom img {
+  animation: heroZoom 18s ease-in-out forwards;
+  will-change: transform;
+}
+
